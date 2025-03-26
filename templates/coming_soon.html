@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Grocer Ease</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Grocer Ease</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="coming-soon-section">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Coming Soon</h1>
+            <p class="lead mb-4">We're working hard to bring you something amazing!</p>
+            <div class="features-preview">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-preview-card">
+                            <h3>Smart Navigation</h3>
+                            <p>Find your way through the store with AI-powered assistance</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-preview-card">
+                            <h3>Save Money</h3>
+                            <p>Get personalized deals and optimize your shopping</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-preview-card">
+                            <h3>Mobile First</h3>
+                            <p>Seamless experience across all your devices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
