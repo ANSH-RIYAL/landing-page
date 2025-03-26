@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlider();
 
     // Interest Button
-    const interestBtn = document.getElementById('interestBtn');
+    const interestBtn = document.getElementById('interestedBtn');
     const interestCount = document.getElementById('interestCount');
+    const emailSubmissionSection = document.getElementById('emailSubmissionSection');
 
     function updateInterestCount() {
         fetch('/api/interest/count')
@@ -73,14 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify({})
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+                if (data.status === 'success') {
                     interestBtn.disabled = true;
                     interestBtn.textContent = 'Interested!';
                     updateInterestCount();
+                    // Show email submission section
+                    if (emailSubmissionSection) {
+                        emailSubmissionSection.style.display = 'block';
+                    }
+                } else {
+                    console.error('Error tracking interest:', data.message);
                 }
             })
             .catch(error => console.error('Error:', error));
@@ -92,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput ? emailInput.value : '';
             
             fetch('/api/subscribe', {
                 method: 'POST',
@@ -103,12 +112,17 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+                if (data.status === 'success') {
                     alert('Thank you for subscribing!');
                     subscribeForm.reset();
+                } else {
+                    alert('There was an error subscribing. Please try again.');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error subscribing. Please try again.');
+            });
         });
     }
 

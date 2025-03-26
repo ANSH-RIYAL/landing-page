@@ -146,24 +146,36 @@ body {
     margin-bottom: 30px;
 }
 
-.form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--light-color);
+.email-form .input-group {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.email-form .form-control {
+    flex: 1;
     padding: 12px 20px;
     border-radius: 50px;
-    margin-bottom: 20px;
-}
-
-.form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.form-control:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--light-color);
-    box-shadow: none;
+}
+
+.email-form .btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    white-space: nowrap;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.email-form .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 /* Success Message */
