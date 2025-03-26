@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initial interest count update
+    updateInterestCount();
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
@@ -162,7 +165,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Initial interest count update
-    updateInterestCount();
 }); 

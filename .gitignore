@@ -6,8 +6,6 @@ __pycache__/
 .Python
 venv/
 ENV/
-env/
-.env
 
 # IDE
 .idea/
@@ -15,6 +13,16 @@ env/
 *.swp
 *.swo
 
+# Environment variables
+.env
+
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Logs
+*.log
+
+# Local development
+instance/
+.webassets-cache 
